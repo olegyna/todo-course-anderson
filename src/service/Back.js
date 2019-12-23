@@ -65,19 +65,19 @@ class Backend {
             .catch(() =>false)
     }
 
-    checkAuth() {
-        return fetch(this.url + '/me', {
-            method: 'GET',
-            headers: {
-                'Authorization': this.authStorage.getElement('token'),
-            },
-        }).then(res =>{
-            if(!res.ok){
-                return Promise.reject('pyk')
-            }
-            return Promise.resolve(res.json())
-        })
-    }
+    // checkAuth() {
+    //     return fetch(this.url + '/me', {
+    //         method: 'GET',
+    //         headers: {
+    //             'Authorization': this.authStorage.getElement('token'),
+    //         },
+    //     }).then(res =>{
+    //         if(!res.ok){
+    //             return Promise.reject('pyk')
+    //         }
+    //         return Promise.resolve(res.json())
+    //     })
+    // }
 
     createToDo(text, createDate, completed) {
          return fetch(this.url + '/todos', {
@@ -114,20 +114,20 @@ class Backend {
             return Promise.resolve(res.json())
         })
     }
-
-    getToDoById(id) {
-        return fetch(this.url + `/todos/${id}`, {
-            method: 'GET',
-            headers: {
-                'Authorization': this.authStorage.getElement('token'),
-            },
-        }).then(res =>{
-            if(!res.ok){
-                return Promise.reject('pyk')
-            }
-            return Promise.resolve(res.json())
-        })
-    }
+//not needed
+    // getToDoById(id) {
+    //     return fetch(this.url + `/todos/${id}`, {
+    //         method: 'GET',
+    //         headers: {
+    //             'Authorization': this.authStorage.getElement('token'),
+    //         },
+    //     }).then(res =>{
+    //         if(!res.ok){
+    //             return Promise.reject('pyk')
+    //         }
+    //         return Promise.resolve(res.json())
+    //     })
+    // }
 
     updateTodoText(id, text) {
         return fetch(this.url + `/todos/${id}`, {

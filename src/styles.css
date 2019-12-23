@@ -1,18 +1,10 @@
-:root {
-    --border: #888888;
-    --decor: #777777;
-    --text: #141414;
-    --text-secondary: #555555;
-    --danger: #d62c1a;
-    --danger--dark: #a82315;
-}
-
 html {
     height: 100%;
     font-size: 16px;
     background: #f3f3f3;
 }
 ​
+
 body {
     font-family: sans-serif;
     margin: 0;
@@ -21,7 +13,6 @@ body {
     Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 1rem;
     line-height: 1.5;
-    color: var(--text);
 }
 ​
 
@@ -29,84 +20,26 @@ p {
     margin: 0;
 }
 ​
+
 h1, h2 {
     line-height: 1.1;
     margin: 0;
 }
 ​
-.intro {
-    padding: 0 0 1rem 0;
-    margin: 0 0 2rem 0;
-    border-bottom: 1px dotted var(--border);
-}
-​
-.app__heading{
-    position: absolute;
-    top: -155px;
-    width: 100%;
-    font-size: 100px;
-    font-weight: 100;
-    text-align: center;
-    color: rgba(175, 47, 47, 0.15);
-}
 
-.intro__heading {
-    text-align: center;
-    font-size: 40px;
-    font-weight: 400;
-}
-​
-.intro__summary {
-    margin-top: 0.3rem;
-    font-size: 1.3rem;
-    font-weight: 300;
-}
-​
-.intro__summary b {
-    font-weight: 500;
-}
-.app {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-auto-flow: row;
-    grid-gap: 2rem;
-}
-​
-.app__decor {
-    display: block;
-    width: 100%;
-    text-align: center;
-    font-size: 3rem;
-    line-height: 1;
-}
-​
-.app__decor small {
-    display: block;
-    font-size: 1.3rem;
-    font-weight: 400;
-    color: var(--text-secondary);
-}
-​
-.app__decor > * {
-    display: block;
-}
-​
-.app__decor > * + * {
-    margin-top: 0.4rem;
-}
-​
 .new-item {
     margin: 2rem 0 0 0;
     padding: 1rem 0 0 0;
-    border-top: 1px dotted var(--border);
+    border-top: 1px dotted;
 }
 ​
+
 .new-item__button {
     position: relative;
 
 }
 ​
-​
+
 .visually-hidden {
     display: block;
     height: 1px;
@@ -119,6 +52,7 @@ h1, h2 {
     position: absolute;
 }
 
+
 .input-field-forms,  .c-input-field {
     width: 90%;
     padding: 15px;
@@ -129,9 +63,11 @@ h1, h2 {
     outline: none;
 }
 
+
 .input-field-forms:focus,.c-input-field:focus {
     background-color: lightblue;
 }
+
 
 .label-input-form, .c-label{
     color: #141414;
@@ -139,35 +75,38 @@ h1, h2 {
     font-weight: bold;
 }
 
+
 .wrapper {
     margin: auto 37%;
-    width: 450px;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 30px;
+    width: 400px;
 }
+
+
 .form-styles{
     font-size: 20px;
     margin: auto 37% ;
-    width: 450px;
+    width: 400px;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 30px;
 }
 
 .todo-items-style{
-    width: 500px;
+    width: 400px;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 30px;
-
+    margin: auto 37%;
 }
-
 
 
 .button-wrapper,.mainform-buttons{
     display: flex;
 }
+
 
 .headertext{
     display: flex;
@@ -196,23 +135,6 @@ h1, h2 {
     background:darkolivegreen ;
 }
 
-.list-checkbox{
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-.list-checkbox input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
 
 .underline-text{
     text-decoration: line-through;
@@ -224,4 +146,29 @@ h1, h2 {
 
 .editTodo{
     display: none;
+}
+
+.filter-buttons{
+    height: 30px;
+    width: 97%;
+    display: block;
+    font: inherit;
+    text-align: initial;
+    padding: 0;
+    box-sizing: content-box;
+    border: 0;
+    outline: 0;
+    background-color: rgba(24, 245, 0, 0.21);
+    border-bottom: 1px solid #004c50;
+    text-transform: inherit;
+    text-rendering: inherit;
+    letter-spacing: inherit;
+    text-indent: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.no-todos-text{
+
 }

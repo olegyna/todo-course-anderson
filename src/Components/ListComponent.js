@@ -13,12 +13,11 @@ export default class ListComponent extends Component {
         super(
             store,
             document.querySelector('.js-items')
-        );
+        )
 
         backend.getToDo().then(
             res => store.dispatch('addItems',res)
         )
-
 
         const input = document.querySelector('.c-input-field');
         const submit = document.querySelector('.c-button');
@@ -97,7 +96,7 @@ export default class ListComponent extends Component {
     render() {
 
         if (store.state.todo.length === 0) {
-            this.anchor.innerHTML = "<div class='headertext'>NO TODO`S,YOU ARE FREE</div>";
+            this.anchor.innerHTML = "<div class='no-todos-text'>NO TODO`S,YOU ARE FREE</div>";
             return;
         }
 
