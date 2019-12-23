@@ -10,8 +10,6 @@ export default class CountersComponent extends Component {
     }
 
     render(){
-
-
     const todoLenght = store.state.todo.length;
     const todoCompletedLenght = store.state.todo.filter((todoItem) => todoItem.completed).length;
     const todoNotCompletedLenght= store.state.todo.filter((todoItem) => !todoItem.completed).length;
@@ -21,7 +19,5 @@ export default class CountersComponent extends Component {
             need to complete- ${todoCompletedLenght} <br>
             not completed todos- ${todoNotCompletedLenght}
         </div>`
-
-
     }
 }

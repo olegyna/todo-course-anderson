@@ -11,8 +11,10 @@ export default class LoginComponent extends Component {
             store,
             app
         );
+
         const inputEmail = app.querySelector('#email');
         const inputPass = app.querySelector('#password');
+
         app.querySelector('#toRegister').addEventListener('click', () => {
             link('register')
         });
@@ -20,18 +22,15 @@ export default class LoginComponent extends Component {
         app.querySelector('#signIn').addEventListener('click', () => {
             backend.login(inputEmail.value,inputPass.value).then(
                 (res) => {
-                    console.log(res);
                     if(res){
                         link('list')
                     }
                 },
 
             );
-            console.log(settings);
         });
     }
 
     render() {
-        console.log('login render');
     }
 }

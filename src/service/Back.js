@@ -58,7 +58,6 @@ class Backend {
                 return Promise.resolve(res.json())
             })
             .then(res => {
-                console.log(res);
                 this.authStorage.setElement('token', res.token);
                 return true;
             })

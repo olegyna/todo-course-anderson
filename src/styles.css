@@ -94,6 +94,7 @@ h1, h2 {
     padding: 30px;
 }
 
+
 .todo-items-style{
     width: 400px;
     background-color: rgba(0, 0, 0, 0.5);
@@ -170,5 +171,11 @@ h1, h2 {
 }
 
 .no-todos-text{
-
+    font-size: 25px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 30px;
+    width: 400px;
+    margin: auto 37% ;
 }

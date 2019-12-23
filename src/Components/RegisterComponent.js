@@ -15,7 +15,6 @@ export default class RegisterComponent extends Component {
         const inputEmail = app.querySelector('#register-email');
         const inputPass = app.querySelector('#register-password');
         app.querySelector('#register-button').addEventListener('click', () => {
-            console.log(settings);
             backend.register(inputEmail.value, inputPass.value, inputUserName.value).then(
                 () => link('login'),
             );
@@ -24,7 +23,5 @@ export default class RegisterComponent extends Component {
     }
 
 
-    render() {
-        console.log('login render');
-    }
+    render() {}
 }

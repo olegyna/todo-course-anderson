@@ -4,7 +4,6 @@ import link from "../router/link.js";
 import {backend} from "../service/Back.js"
 
 
-
 export default class ListComponent extends Component {
     constructor(app, settings) {
         const template = document.getElementById('list').content.cloneNode(true);
@@ -23,18 +22,18 @@ export default class ListComponent extends Component {
         const submit = document.querySelector('.c-button');
         const handleClick = event => {
             event.preventDefault();
-
             let value = input.value.trim();
             if (value.length) {
                 backend.createToDo(value,new Date().toDateString(),false)
                     .then(res =>store.dispatch('addItem',res ))
                 input.focus();
             }
-
             input.value= '';
         }
 
+
         submit.addEventListener('click', handleClick);
+
 
         app.querySelector('#exitbutton').addEventListener('click', () => {
             localStorage.clear();
@@ -56,6 +55,7 @@ export default class ListComponent extends Component {
             .then(()=> store.dispatch('toggleCompleted', {id}))
     }
 
+
     editThisField(event){
         if(event.keyCode===13){
             const id = event.target.dataset.id;
@@ -66,6 +66,7 @@ export default class ListComponent extends Component {
         }
     }
 
+
     visibleOfEditWindow(event){
         const id = event.target.dataset.id;
         const inputId =  this.anchor.querySelector(`#edit-${CSS.escape(id)}`);
@@ -75,17 +76,16 @@ export default class ListComponent extends Component {
         inputId.style.display = 'block';
     }
 
+
     initFilterListeners(app){
         app.querySelector('#todo-completed-filter').addEventListener('click', function(event){
             this.filter = 'checked';
             this.render();
         }.bind(this));
-
         app.querySelector('#all-todo-filter').addEventListener('click', function(event){
             this.filter = '';
             this.render();
         }.bind(this));
-
         app.querySelector('#todo-not-completed-filter').addEventListener('click', function(event){
             this.filter = 'unchecked';
             this.render();
@@ -95,19 +95,21 @@ export default class ListComponent extends Component {
 
     render() {
 
+
         if (store.state.todo.length === 0) {
             this.anchor.innerHTML = "<div class='no-todos-text'>NO TODO`S,YOU ARE FREE</div>";
             return;
         }
-
         let todo = store.state.todo;
 
         if(this.filter==='checked'){
            todo = store.state.todo.filter((todoItem) => todoItem.completed)
         }
+
         if(this.filter==='unchecked'){
             todo = store.state.todo.filter((todoItem) => !todoItem.completed)
         }
+
 
         this.anchor.innerHTML = `
            <div class="todo-items-style">
@@ -127,13 +129,11 @@ export default class ListComponent extends Component {
              </div>
         `;
 
-
-
         this.anchor.querySelectorAll('.editTodo').forEach((field) =>
             field.addEventListener('keyup',this.editThisField.bind(this)));
 
         this.anchor.querySelectorAll('.edit-field').forEach(field =>
-        field.addEventListener('click',this.visibleOfEditWindow.bind(this)));
+            field.addEventListener('click',this.visibleOfEditWindow.bind(this)));
 
         this.anchor.querySelectorAll('.checkbox').forEach((checkbox) =>
             checkbox.addEventListener('click',this.switchCheckbox.bind(this)));
